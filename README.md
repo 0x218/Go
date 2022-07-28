@@ -1,4 +1,4 @@
-# Go_Sample_project1
+# Project Movie
 
 This is a simple practice level web project in Go-lang, performing CRUD operation.  Databases are mimicked with struct and slice.
 
