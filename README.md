@@ -1,6 +1,6 @@
 # Go_Sample_project1
 
-This is a simple practice level web project in Go-lang, perform CRUD operation.  Databases are mimicked with the help of struct and slice.
+This is a simple practice level web project in Go-lang, performing CRUD operation.  Databases are mimicked with struct and slice.
 
 Data relation: 'Movie' HAS a 'Director'.
 
