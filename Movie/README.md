@@ -15,3 +15,4 @@ Defining 5 routes:
  
  Starting a web server is achieved with http.ListenAndServe()
  
+HL_Presentation.jpg provides an overall picture.
