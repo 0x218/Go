@@ -1,6 +1,6 @@
 //go build --help
 //This serve as the library for C++.  This file need to build first with below comamnd -
-//go build -buildmode=c-shared -o ./maingo.so ./maingo.go
+//go build -buildmode=c-shared -o ./golib.so ./golib.go
 
 package main
 
