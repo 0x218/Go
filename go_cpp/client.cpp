@@ -1,7 +1,7 @@
 //build this program using below command 
 //g++ client.cpp ./golibServer.so -o client 
 
-#include "maingo.h"
+#include "golibServer.h"
 
 #include <iostream>
 #include <cstring>
