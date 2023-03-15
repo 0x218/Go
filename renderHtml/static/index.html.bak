@@ -291,11 +291,11 @@
             <br>
             <h2>Layout four</h2>
             <label>Date : </label>
-				<span>
-					<input type=date id=date>
-						<script> document.getElementById("date").value = new Date().toISOString().substring(0, 10); </script>
-					</input>
-				</span>
+		<span>
+		<input type=date id=date>
+		<script> document.getElementById("date").value = new Date().toISOString().substring(0, 10); </script>
+		</input>
+		</span>
 
             <fieldset>
             <legend>This is your Sample Table:</legend>
