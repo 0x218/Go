@@ -28,5 +28,5 @@ Then you open browser and navigate to http://localhost:3000/
 
 * In case you wish to create output file as renderInWindows.exe:-
 ```
-go build main.go -o renderInWindows.exe
+go build -o renderInWindows.exe main.go 
 ```   
