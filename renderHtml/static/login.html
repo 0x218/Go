@@ -88,3 +88,483 @@
          <h2>Login Successful </h2>
          <h4> Click <a href = "index.html" >here</a> to go back to the home page </h4>
       </div>
+	  
+	  
+	    <style>
+			table {
+				border-collapse: collapse;
+				width: 50%;
+			}
+
+			table, th, td {
+				border: 1px solid black;
+			}
+
+			th, td {
+				padding: 10px;
+				text-align: center;
+			}
+
+			tr:hover {
+				background-color: #f5f5f5;
+				cursor: pointer;
+			}
+		</style>
+		<h4>Simple table with link </h2>
+		<table id="clickableTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>CEO</th>
+				<th>Corporate Link</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>               
+				<td>Lakshmi Mittal</td>	
+				<td><a href="https://corporate.arcelormittal.com/">www.corporate.arcelormittal.com</a></td>			
+            </tr>
+            <tr>
+                <td>2</td>		
+				<td>Indra Nooyi</td>					
+                <td><a href="https://www.pepsico.com/">www.pepsico.com</a></td>
+            </tr>
+            <tr>
+                <td>3</td>	
+				<td>Aliko Dangote</td>
+                <td><a href="https://www.dangote.com/">www.dangote.com</a></td>
+            </tr>
+        </tbody>
+	</table>
+	<!-- ========================================================================== -->
+	
+	<br><br><br><br>
+	<style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr.selected {
+            background-color: #cce5ff; /* Change the background color for selected rows */
+        }
+    </style>
+	<h4>Multi row selectable table</h2>
+	<table id="fortune10">
+        <thead>
+            <tr>
+				<th>Rank</th>
+                <th>Comapany</th>
+                <th>CEO</th>
+				<th>Industry</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="selectable">
+                <td>1</td>
+                <td>Walmart</td>
+				<td>Douglas McMillon</td>
+				<td>General Merchandisers</td>
+            </tr>
+            <tr class="selectable">
+                <td>2</td>
+                <td>Amazon</td>
+				<td>Andrew R. Jassy</td>
+				<td>Internet Services and Retailing</td>
+            </tr>
+			<tr class="selectable">
+                <td>3</td>
+                <td>Exxon Mobil</td>
+				<td>Darren W. Woods</td>
+				<td>Petroleum Refining</td>
+            </tr>
+			<tr class="selectable">
+                <td>4</td>
+                <td>Apple</td>
+				<td>Timothy D. Cook</td>
+				<td>Computers</td>
+            </tr>
+			<tr class="selectable">
+                <td>5</td>
+                <td>United Healthgroup</td>
+				<td>Andrew P. Witty</td>
+				<td>Healthcare</td>
+            </tr>
+			<tr class="selectable">
+                <td>6</td>
+                <td>CVS</td>
+				<td>Karen S. Lynch</td>
+				<td>Pharmacy</td>
+            </tr>
+			<tr class="selectable">
+                <td>7</td>
+                <td>Berkshire Hathaway</td>
+				<td>Warren E. Buffett</td>
+				<td>Insurance</td>
+            </tr>
+			<tr class="selectable">
+                <td>8</td>
+                <td>Google</td>
+				<td>Sundar Pichai</td>
+				<td>Internet Services and Retailing</td>
+            </tr>
+			<tr class="selectable">
+                <td>9</td>
+                <td>McKesson</td>
+				<td>Brian S. Tyler</td>
+				<td>Wholesalers</td>
+            </tr>
+			<tr class="selectable">
+                <td>10</td>
+                <td>Chevron</td>
+				<td>Michael K. Wirth</td>
+				<td>Petroleum Refining</td>
+            </tr>
+            <!-- Add more rows as needed -->
+        </tbody>
+    </table>
+
+	<!-- ========================================================================== -->
+	
+	<br><br><br><br>
+	<style>
+		.hidden {
+			display: none;
+        }
+	
+		tr.selected {
+            background-color: #cce5ff; /* Change the background color for selected rows */
+        }
+		table {
+			border-collapse: collapse;
+		}
+
+		th, td {
+			border: 1px solid black;
+			padding: 0.5em;
+		}
+	</style>
+    <h4>Table with hidden rows</h2>
+	<table id="Career" class="table table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Position</th>
+                <th scope="col">Office</th>
+                <th scope="col">Age</th>
+                <th scope="col">Salary</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="page-1 hidden selectable">
+                <td>
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="customCheck1" value="0" onchange="updateLabel(this)">
+                        <label class="custom-control-label">Tiger Nixon</label>
+                    </div>
+                </td>
+                <td>System Architect</td>
+                <td>Edinburgh</td>
+                <td>21</td>
+                <td>$320,800</td>
+            </tr>
+            
+            <tr class="page-1 hidden selectable">
+                <td>
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="customCheck2" value="0" onchange="updateLabel(this)">
+                        <label class="custom-control-label">Ashton Cox</label>
+                    </div>
+                </td>
+                <td>Junior Technical Author</td>
+                <td>San Francisco</td>
+                <td>26</td>
+                <td>$86,000</td>
+            </tr>
+            
+            <tr class="page-1 hidden selectable">
+                <td>
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="customCheck3" value="0" onchange="updateLabel(this)">
+                        <label class="custom-control-label">Garrett Winters</label>
+                    </div>
+                </td>
+                <td>Accountant</td>
+                <td>Tokyo</td>
+                <td>33</td>
+                <td>$170,750</td>
+            </tr>
+				<tr class="page-2 hidden selectable">
+                <td>
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="customCheck4" value="0" onchange="updateLabel(this)">
+                        <label class="custom-control-label">Cedric Kelly</label>
+                    </div>
+                </td>
+                <td>Senior Javascript Developer</td>
+                <td>Edinburgh</td>
+                <td>22</td>
+                <td>$433,060</td>
+            </tr>
+            <tr>
+                <tr class="page-2 hidden selectable">
+                <td>
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="customCheck5" value="0" onchange="updateLabel(this)">
+                        <label class="custom-control-label">Airi Satou</label>
+                    </div>
+                </td>
+				<td>Accountant</td>
+                <td>Tokyo</td>
+                <td>33</td>
+                <td>$162,700</td>
+            </tr>
+            <tr>
+                <tr class="page-2 hidden selectable">
+                <td>
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="customCheck6" value="0" onchange="updateLabel(this)">
+                        <label class="custom-control-label">Brielle Williamson</label>
+                    </div>
+                </td>
+				<td>Integration Specialist</td>
+                <td>New York</td>
+                <td>61</td>
+                <td>$372,000</td>
+            </tr>
+            <tr>
+                <tr class="page-3 hidden selectable">
+                <td>
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="customCheck7" value="0" onchange="updateLabel(this)">
+                        <label class="custom-control-label">Herrod Chandler</label>
+                    </div>
+                </td>
+				<td>Sales Assistant</td>
+                <td>San Francisco</td>
+                <td>59</td>
+                <td>$137,500</td>
+            </tr>
+            <tr>
+                <tr class="page-3 hidden selectable">
+                <td>
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="customCheck8" value="0" onchange="updateLabel(this)">
+                        <label class="custom-control-label">Rhona Davidson</label>
+                    </div>
+                </td>
+				<td>Integration Specialist</td>
+                <td>Tokyo</td>
+                <td>55</td>
+                <td>$327,900</td>
+            </tr>
+            <tr>
+                <tr class="page-3 hidden selectable">
+                <td>
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="customCheck9" value="0" onchange="updateLabel(this)">
+                        <label class="custom-control-label">Colleen Hurst</label>
+                    </div>
+                </td>
+				<td>Javascript Developer</td>
+                <td>San Francisco</td>
+                <td>39</td>
+                <td>$205,500</td>
+            </tr>
+            <tr>
+                <tr class="page-4 hidden selectable">
+				<td>
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="customCheck10" value="0" onchange="updateLabel(this)">
+                        <label class="custom-control-label">Sonya Frost</label>
+                    </div>
+                </td>
+				<td>Software Engineer</td>
+                <td>Edinburgh</td>
+                <td>23</td>
+                <td>$103,600</td>
+            </tr>
+            <tr>
+                <tr class="page-4 hidden selectable">
+                <td>
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="customCheck11" value="0" onchange="updateLabel(this)">
+                        <label class="custom-control-label">Jena Gaines</label>
+                    </div>
+                </td>
+				<td>Office Manager</td>
+                <td>London</td>
+                <td>30</td>
+                <td>$90,560</td>
+            </tr>
+            <tr>
+                <tr class="page-4 hidden selectable">
+                <td>
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="customCheck12" value="0" onchange="updateLabel(this)">
+                        <label class="custom-control-label">Quinn Flynn</label>
+                    </div>
+                </td>
+				<td>Support Lead</td>
+                <td>Edinburgh</td>
+                <td>22</td>
+                <td>$342,000</td>
+            </tr>
+            <tr>
+                <tr class="page-5 hidden selectable">
+                <td>
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="customCheck13" value="0" onchange="updateLabel(this)">
+                        <label class="custom-control-label">Charde Marshall</label>
+                    </div>
+                </td>
+				<td>Regional Director</td>
+                <td>San Francisco</td>
+                <td>36</td>
+                <td>$470,600</td>
+            </tr>
+            <tr>
+                <tr class="page-5 hidden selectable">
+                <td>
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="customCheck14" value="0" onchange="updateLabel(this)">
+                        <label class="custom-control-label">Haley Kennedy</label>
+                    </div>
+                </td>
+				<td>Senior Marketing Designer</td>
+                <td>London</td>
+                <td>43</td>
+                <td>$313,500</td>
+            </tr>
+            <tr>
+                <tr class="page-5 hidden selectable">
+                <td>
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="customCheck15" value="0" onchange="updateLabel(this)">
+                        <label class="custom-control-label">Tatyana Fitzpatrick</label>
+                    </div>
+                </td>
+				<td>Regional Director</td>
+                <td>London</td>
+                <td>19</td>
+                <td>$385,750</td>
+            </tr>
+ 
+        </tbody>
+    </table>
+		<div class="pagination">
+        <button id="prevPage">Previous</button>
+        <button id="nextPage">Next</button>
+    </div>
+	
+    <script>
+		//============================================================
+		//    *********   for the Selectable feature   *********
+		//============================================================
+        document.addEventListener("DOMContentLoaded", function() {
+            var rows = document.querySelectorAll("tr.selectable");
+
+            rows.forEach(function(row) {
+                row.addEventListener("click", function() {
+                    this.classList.toggle("selected");
+                });
+            });
+        });
+
+
+		//============================================================
+		//    ****** for the Checkbox in the table feature ******
+		//============================================================
+        function updateLabel(checkbox) {
+			//console.log('a click event occured in checkbox');
+            const label = checkbox.nextElementSibling;
+            if (checkbox.checked) {
+                checkbox.value = "1";
+            } else {
+                checkbox.value = "0";
+            }
+        }
+
+		//============================================================
+		// *********for the Next and Previous button - Begin *********
+		//============================================================
+        const prevPageButton = document.getElementById("prevPage");
+        const nextPageButton = document.getElementById("nextPage");
+		
+		const rowsPerPage = 3;
+        let currentPage = 1;
+
+
+		function updatePageVisibility() {
+			const startRow = (currentPage - 1) * rowsPerPage;
+			const endRow = currentPage * rowsPerPage;
+	
+			const rows = document.querySelectorAll('.page-1, .page-2, .page-3');
+			//const rows = document.querySelectorAll(`.page-${currentPage}`);
+			
+			//console.log('total rows: ' + rows.length + ' start row ' + startRow + ' end row ' + endRow);
+						
+            for (let i = 0; i < rows.length; i++) {
+                if (i >= startRow && i < endRow) {
+                    //console.log('showing row : ', rows[i].classList);
+					rows[i].classList.remove("hidden");
+					
+                } else {
+					//console.log('hiding row : ', rows[i].classList);
+                    rows[i].classList.add("hidden");
+                }
+            }
+			
+			console.log('The current page is now: ', currentPage);
+			if (currentPage === 1) {
+				console.log('inside page = 1');
+				//prevPageButton.style.display = "none";
+				//nextPageButton.style.display = "block";
+				prevPageButton.disabled = true;
+				nextPageButton.disabled = false;
+			} else if (currentPage === 3) {
+				console.log('inside page = 3');
+				//prevPageButton.style.display = "block";
+				//nextPageButton.style.display = "none";
+				prevPageButton.disabled = false;
+				nextPageButton.disabled = true;
+			} else {
+				console.log('inside page between 1 and 3');
+				//prevPageButton.style.display = "block";
+				//nextPageButton.style.display = "block";
+				prevPageButton.disabled = false;
+				nextPageButton.disabled = false;
+			}
+		}
+	
+		prevPageButton.addEventListener("click", () => {
+			//console.log('Previous button click: Current page : '+ currentPage);          
+			if (currentPage > 1) {
+				currentPage--;
+				updatePageVisibility();
+			}
+		});
+
+
+		nextPageButton.addEventListener("click", () => {
+			//console.log('Next button event');
+			if (currentPage < 3) { //3 pages
+				currentPage++;
+				updatePageVisibility();
+			}
+		});
+		
+		updatePageVisibility();
+		//============================================================
+		// *********for the Next and Previous button - end *********
+		//============================================================	
+    </script>
+	</body>
+</html>
