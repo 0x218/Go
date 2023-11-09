@@ -116,8 +116,50 @@
          height: 1000px;
          overflow: scroll;
          }
+		 
+		.list-container {
+			display: flex;
+			justify-content: space-between; /* Adjust as needed for spacing */
+		}
+
+		.list-container select {
+			width: 48%; /* Adjust the width as needed */
+		}
+		
+		.select-container {
+			margin-right: 50px; /* Adjust the value as needed to control the spacing */
+		}
+	
+	
+		.custom-dropdown {
+            position: relative;
+            display: inline-block;
+            border: 1px solid #ccc;
+            cursor: pointer;
+            width: 150px;
+        }
+
+
       </style>
+	   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+   
       <script>
+	  
+	       $(document).ready(function () {
+            $(".custom-dropdown").on("click", function () {
+                $(this).find(".fruitOptions").slideToggle();
+            });
+
+            $(".fruitOptions li").on("click", function () {
+                var selectedValue = $(this).attr("data-value");
+                var selectedText = $(this).text();
+                $(this).closest(".custom-dropdown").find(".selected-option").text(selectedText);
+                $(this).closest(".custom-dropdown").find(".fruitOptions").slideUp();
+                // You can use selectedValue as needed in your code
+                // Example: alert("Selected value: " + selectedValue);
+            });
+        });
+		
          function allowDrop(ev) {
            ev.preventDefault();
          }
@@ -242,14 +284,32 @@
                      <option value="76 to 125">76 to 125</option>
                   </select>
                   <br><br>
-                  <p>Lets you select multiple hobbies</p>
-                  <select name="Optionwithcheck[]" id="owc" multiple="owc">
-                     <label for="option">Choose multiple options:</label><br>
-                     <option value="Sports">Sports</option>
-                     <option value="Arts">Arts</option>
-                     <option value="Music">Music</option>
-                     <option value="Drama">Drama</option>
-                  </select>
+				  
+				  <div class="list-container">
+					<div class="select-container">
+						<p>Select multiple hobbies</p>
+						<select name="Optionwithcheck[]" id="owc" multiple="owc">
+							<label for="option">Choose multiple options:</label><br>
+							<option value="Sports">Sports</option>
+							<option value="Arts">Arts</option>
+							<option value="Music">Music</option>
+							<option value="Drama">Drama</option>
+						</select>
+					</div>
+				</div>
+				<div class="custom-dropdown">
+					<div class="selected-option">Select a food</div>
+						<ul class="fruitOptions">
+						<li data-value="fruit">Apple</li>
+						<li data-value="fruit">Banana</li>
+						<li data-value="fruit">Cherry</li>
+						<li data-value="vegetable">Carrot</li>
+						<li data-value="vegetable">Broccoli</li>
+						<li data-value="vegetable">Cucumber</li>
+					</ul>
+				</div>
+
+					
                   <br><br>
                   <label for="option">Choose ideal way of travel:</label><br>
                   <input type="checkbox" id="moption" name="flight" value="Sky">

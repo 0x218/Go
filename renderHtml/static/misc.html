@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Selectable Cell</title>
+</head>
+<body>
+    <table class="table table-bordered" id="miscCareer">
+        <thead>
+            <tr>
+                <th scope="col">Index</th>
+                <th scope="col">Office</th>
+                <th scope="col">Age</th>
+                <th scope="col">Position</th>
+                <th scope="col">Salary</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="page-1">
+                <td>1</td>
+                <td>Tokyo</td>
+                <td>33</td>
+                <td>
+                    <select class="role-dropdown">
+                    </select>
+                </td>
+                <td>$170,750</td>
+            </tr>
+
+            <tr class="page-1">
+                <td>2</td>
+                <td>Edinburgh</td>
+                <td>21</td>
+                <td>
+                    <select class="role-dropdown">
+                    </select>
+                </td>
+                <td>$320,800</td>
+            </tr>
+			
+			<tr class="page-1">
+                <td>3</td>
+                <td>London</td>
+                <td>30</td>
+                <td>
+                    <select class="role-dropdown">
+                    </select>
+                </td>
+                <td>$90,560</td>
+            </tr>
+			
+			<tr class="page-1">
+                <td>4</td>
+                <td>Edinburgh</td>
+                <td>22</td>
+                <td>
+                    <select class="role-dropdown">
+                    </select>
+                </td>
+                <td>$342,000</td>
+                </td>
+            </tr>
+			
+			<tr class="page-1">
+                <td>5</td>
+                <td>San Francisco</td>
+                <td>36</td>
+                <td>
+                    <select class="role-dropdown">
+                    </select>
+                </td>
+                <td>$470,600</td>
+				</tr>			
+        </tbody>
+    </table>
+
+    <script>
+        // Add your custom roles here
+        const roles = ["Accountant", "System Architect", "Junior Technical Author", "Senior Developer"];
+
+        // Function to generate role dropdown options
+        function generateRoleOptions() {
+            const selects = document.querySelectorAll(".role-dropdown");
+            selects.forEach(select => {
+                roles.forEach(role => {
+                    const option = document.createElement("option");
+                    option.value = role;
+                    option.textContent = role;
+                    select.appendChild(option);
+                });
+            });
+        }
+
+        // Call the function to generate options
+        generateRoleOptions();
+    </script>
+</body>
+</html>
