@@ -252,6 +252,8 @@
                }
             </script>
             <br><br>
+
+			<br><br>
             <p>This is your Sample drag and drop</p>
             <p>Drag Chicken into grill:</p>
             <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
@@ -336,12 +338,14 @@
                   <input type="range" id="a" name="a" value="50">
                   <output name="x" for="a"></output>
                   <br><br>
-                  <label for="myfile">Select a file:</label>
-                  <input type="file" id="myfile" name="myfile"><br><br>
+                  <label for="myfile">Upload a file:</label>
+                  <input type="file" id="myfile" name="myfile">
+				  <br><br>
+
                   <label for="quantity">Select a quantity from a range:</label>
                   <input type="number" id="quantity" name="quantity" min="1" max="5"><br><br>
                   <label for="lmsg">Long Message:</label><br>
-                  <textarea name="message" rows="10" cols="30">The cat was playing in the garden.</textarea><br><br>
+                  <textarea id="longtext" name="message" rows="10" cols="30">The cat was playing in the garden.</textarea><br><br>
             </form>
             <br><br><h6>Clicking the submit button will take you to a new tab</h6><button class="btn btn-success" onclick=" window.open('http://google.com','_blank')"> Submit</button> 
             </fieldset>
