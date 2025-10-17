@@ -1,26 +1,33 @@
-﻿///////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////
 //			--------	API Testing Documentation	--------
 //				GET /health → Should return "OK"
 //				GET /users → List all users
 //				GET /users?age=30 → Filter by age
 //				GET /users?min_age=30 → Filter by age > 30
 //				GET /users?max_age=30 → Filter by age <  30
-//				GET /users?state=texas → Filter by state (case-insensitive)
+//				GET /users?state=Tennessee → Filter by state (case-insensitive)
+//				GET /users
+//						and add below configuration under the params 'Key' and 'Value' (can be GET/POST)
+//						min_age   30
+//						state     Tennessee
 //				POST /login
 //						and add below configuration under the body -> raw
 //						{
 //							"username": "admin",
 //							"password": "password"
 //						}
+//				NOTE: When using json body, request must send as POST.
+//
 //
 //			--------	Application execution Documentation	--------
 //				*** go run apiServer.go
+//
 //
 //			--------	Application Build Documentation	--------
 //				*** Windows: go build -o apiServer.exe
 //				*** Linux: set GOOS=linux; set GOARCH=amd64; go build -o apiServer
 //
-///////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////
 
 
 package main
@@ -76,23 +83,66 @@ func healthHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 // Handles listing all users and filtering by age/state
+type FilterParams struct {
+	Age    *int   `json:"age,omitempty"`
+	MinAge *int   `json:"min_age,omitempty"`
+	MaxAge *int   `json:"max_age,omitempty"`
+	State  string `json:"state,omitempty"`
+}
+
 func usersHandler(w http.ResponseWriter, r *http.Request) {
 	fmt.Println("Request received to access user info")
-	if r.Method != http.MethodGet {
+
+	if r.Method != http.MethodGet && r.Method != http.MethodPost {
 		http.Error(w, "Method Not Allowed", http.StatusMethodNotAllowed)
 		return
 	}
 
-	ageParam := r.URL.Query().Get("age")
-	minAgeParam := r.URL.Query().Get("min_age")
-	maxAgeParam := r.URL.Query().Get("max_age")
-	stateParam := r.URL.Query().Get("state")
+	var ageParam, minAgeParam, maxAgeParam, stateParam string
 
+	if r.Method == http.MethodGet {
+		// GET params
+		ageParam = r.URL.Query().Get("age")
+		minAgeParam = r.URL.Query().Get("min_age")
+		maxAgeParam = r.URL.Query().Get("max_age")
+		stateParam = r.URL.Query().Get("state")
+	} else if r.Method == http.MethodPost {
+		// Check content type
+		ct := r.Header.Get("Content-Type")
+		if strings.Contains(ct, "application/json") {
+			// JSON body
+			var filters FilterParams
+			if err := json.NewDecoder(r.Body).Decode(&filters); err != nil {
+				http.Error(w, "Invalid JSON", http.StatusBadRequest)
+				return
+			}
+			if filters.Age != nil {
+				ageParam = strconv.Itoa(*filters.Age)
+			}
+			if filters.MinAge != nil {
+				minAgeParam = strconv.Itoa(*filters.MinAge)
+			}
+			if filters.MaxAge != nil {
+				maxAgeParam = strconv.Itoa(*filters.MaxAge)
+			}
+			stateParam = filters.State
+		} else {
+			// Form data
+			if err := r.ParseForm(); err != nil {
+				http.Error(w, "Invalid form data", http.StatusBadRequest)
+				return
+			}
+			ageParam = r.Form.Get("age")
+			minAgeParam = r.Form.Get("min_age")
+			maxAgeParam = r.Form.Get("max_age")
+			stateParam = r.Form.Get("state")
+		}
+	}
+
+	// === Filtering logic (same as before) ===
 	filteredUsers := allUsers
 
-	// Filter by age if provided
 	if ageParam != "" {
-		fmt.Printf("	>> filtering based on age...")
 		age, err := strconv.Atoi(ageParam)
 		if err == nil {
 			var tmp []User
@@ -105,9 +155,7 @@ func usersHandler(w http.ResponseWriter, r *http.Request) {
 		}
 	}
 
-	// Filter by minimum age
 	if minAgeParam != "" {
-		fmt.Printf("	>> filtering users with age > %s ...", minAgeParam)
 		minAge, err := strconv.Atoi(minAgeParam)
 		if err == nil {
 			var tmp []User
@@ -120,9 +168,7 @@ func usersHandler(w http.ResponseWriter, r *http.Request) {
 		}
 	}
 
-	// Filter by maximum age
 	if maxAgeParam != "" {
-		fmt.Printf("	>> filtering users with age < %s ...", maxAgeParam)
 		maxAge, err := strconv.Atoi(maxAgeParam)
 		if err == nil {
 			var tmp []User
@@ -135,9 +181,7 @@ func usersHandler(w http.ResponseWriter, r *http.Request) {
 		}
 	}
 
-	// Filter by state if provided
 	if stateParam != "" {
-		fmt.Printf("	>> filtering users who live in %s ...", stateParam)
 		state := strings.ToLower(stateParam)
 		var tmp []User
 		for _, user := range filteredUsers {
@@ -148,9 +192,12 @@ func usersHandler(w http.ResponseWriter, r *http.Request) {
 		filteredUsers = tmp
 	}
 
+	// Return JSON
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(filteredUsers)
 }
+
+
 
 // Handles login POST request
 func loginHandler(w http.ResponseWriter, r *http.Request) {
