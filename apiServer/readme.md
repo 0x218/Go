@@ -22,7 +22,7 @@ POST /login
 ### Application execution using Go:
 ---
 ```
-go run apiServer.goAPI Testing DocumentationGOOS=windows GOARCH=amd64 go build -o renderInWindows.exe main.go
+go run apiServer.go
 ```   
 
 ### Building application into an executable:
