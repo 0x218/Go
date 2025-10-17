@@ -7,16 +7,20 @@ This program is developed to demonstrate simple api testing.
 ```
 GET /health → Should return "OK"
 GET /users → List all users
-GET /users?age=30 → Filter by age
-GET /users?min_age=30 → Filter by age > 30
-GET /users?max_age=30 → Filter by age <  30
-GET /users?state=texas → Filter by state (case-insensitive)
-POST /login
-	and add below configuration under the body -> raw
-	{
-		"username": "admin",
-		"password": "password"
-	}
+GET /users?age=30 → Filter users by age
+GET /users?min_age=30 → Filter users by age > 30
+GET /users?max_age=30 → Filter users by age <  30
+GET /users?state=Tennessee → Filter users by state (case-insensitive)
+GET /users → Filter users with age >= 30 and state Tennessee
+	Note: Add below configuration under the params 'Key' and 'Value' (can be GET/POST)
+		min_age   30
+		state     Tennessee
+POST /login → Mimic login
+	Note: Add below configuration under the body -> raw.  While passing configuration as json body, must POST.
+		{
+			"username": "admin",
+			"password": "password"
+		}
 ```
 
 ### Application execution using Go:
