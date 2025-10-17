@@ -5,5 +5,5 @@ Repository where Go samples are placed.
 2.  [golibServer](https://github.com/0x218/Go/tree/master/go_cpp) - Data exchange between go server and c++ client.
 3.  [renderHtml](https://github.com/0x218/Go/tree/master/renderHtml) - This go-lang web server renders index.html (or any html file) placed inside the 'static' folder.
 4.  [StructCopy](https://github.com/0x218/Go/tree/master/StructCopy) - It copies the folder structue from source, copies all the folder, sub-folder and files but without the content of files.  Source folder is where the output .exe is placed.  The copied strcture will be placed inside "StructWithEmptyFileContent" folder.
-5.	[apiServer](https://github.com/0x218/Go/tree/master/apiServer) - A api server with end points: /health, /users, /users?age=30, /users?min_age=30, /users?max_age=30, /users?state=tennessee, /login
+5.	[apiServer](https://github.com/0x218/Go/tree/master/apiServer) - An api server with end points: /health, /users, /users?age=30, /users?min_age=30, /users?max_age=30, /users?state=tennessee, /login
 
