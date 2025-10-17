@@ -39,6 +39,6 @@ Linux:
 
 #### Usage:  
 ---
-a. Double click the apiServer (execuable)  - or use ```go run apiServer.go``` to run from the source code.
-b. Open your browser and navigate to http://localhost:8080/
-c. Open Postman and follow the "API Testing Documentation"
+a. Double click the apiServer (execuable)  - or use ```go run apiServer.go``` to run from the source code.<br>
+b. Open your browser and navigate to http://localhost:8080/<br>
+c. Open Postman and follow the "API Testing Documentation"<br>
